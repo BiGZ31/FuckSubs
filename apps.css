@@ -1,0 +1,300 @@
+/* Apps Page Specific Styles */
+
+.apps-hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+}
+
+.apps-hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.apps-hero .subtitle {
+    font-size: 22px;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Apps Section */
+.apps-section {
+    padding: 80px 20px;
+    background-color: var(--bg-color);
+}
+
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* App Card */
+.app-card {
+    background: var(--bg-alt);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.app-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border-color: var(--primary-color);
+}
+
+.app-card:hover::before {
+    opacity: 1;
+}
+
+.app-card.featured {
+    border: 2px solid var(--primary-color);
+    background: linear-gradient(135deg, var(--bg-alt) 0%, rgba(10, 132, 255, 0.05) 100%);
+}
+
+.popular-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary-color);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* App Icon */
+.app-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    background: var(--bg-color);
+}
+
+.app-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.icon-text {
+    font-size: 40px;
+}
+
+/* App Info */
+.app-info h3 {
+    font-size: 26px;
+    margin-bottom: 12px;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.app-description {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.app-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.feature-tag {
+    background: rgba(10, 132, 255, 0.15);
+    color: var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid rgba(10, 132, 255, 0.3);
+}
+
+.app-version {
+    color: var(--text-light);
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+/* Info Section */
+.info-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.info-card {
+    background: var(--bg-alt);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid var(--border-color);
+}
+
+.info-card h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: var(--text-color);
+}
+
+.install-steps {
+    list-style: none;
+    counter-reset: step-counter;
+    margin-bottom: 30px;
+}
+
+.install-steps li {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 20px;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.install-steps li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35px;
+    height: 35px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.install-steps li strong {
+    color: var(--text-color);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.warning-card {
+    background: linear-gradient(135deg, rgba(255, 69, 58, 0.1) 0%, var(--bg-alt) 100%);
+    border-color: rgba(255, 69, 58, 0.3);
+}
+
+.warning-list {
+    list-style: none;
+    padding: 0;
+}
+
+.warning-list li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    color: var(--text-light);
+    line-height: 1.7;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.warning-list li:last-child {
+    border-bottom: none;
+}
+
+.warning-list li::before {
+    content: '⚠️';
+    position: absolute;
+    left: 0;
+    font-size: 18px;
+}
+
+/* Active nav link */
+.nav-links a.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .apps-hero h1 {
+        font-size: 32px;
+    }
+
+    .apps-hero .subtitle {
+        font-size: 18px;
+    }
+
+    .apps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-section {
+        grid-template-columns: 1fr;
+    }
+
+    .app-card {
+        padding: 25px;
+    }
+
+    .info-card {
+        padding: 30px 20px;
+    }
+
+    .install-steps li {
+        padding-left: 45px;
+    }
+}
+
+/* Animations */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.app-card {
+    animation: slideInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.app-card:nth-child(1) { animation-delay: 0.1s; }
+.app-card:nth-child(2) { animation-delay: 0.2s; }
+.app-card:nth-child(3) { animation-delay: 0.3s; }
+.app-card:nth-child(4) { animation-delay: 0.4s; }
+.app-card:nth-child(5) { animation-delay: 0.5s; }
+.app-card:nth-child(6) { animation-delay: 0.6s; }

@@ -1,0 +1,57 @@
+# Configuration Apache pour OTA Installation iOS
+
+# Enable HTTPS redirect
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# MIME types for iOS
+AddType application/octet-stream .ipa
+AddType text/xml .plist
+AddType text/xml .mobileprovision
+
+# Headers for iOS OTA installation
+<FilesMatch "\.(plist|ipa|mobileprovision)$">
+    Header set Content-Disposition "attachment"
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+</FilesMatch>
+
+# CORS for manifest files
+<FilesMatch "\.plist$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</FilesMatch>
+
+# Prevent directory listing
+Options -Indexes
+
+# Allow large files
+php_value upload_max_filesize 200M
+php_value post_max_size 200M
+php_value max_execution_time 300
+php_value max_input_time 300
+
+# Compression for faster loading
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Browser caching (except for IPAs and plists)
+<FilesMatch "\.(jpg|jpeg|png|gif|js|css|ico|svg|woff|woff2|ttf|eot)$">
+    Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+# Security headers
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Protect sensitive files
+<FilesMatch "(\.p12|\.mobileprovision|\.key|\.pem|package\.json|server\.js)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

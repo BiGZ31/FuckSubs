@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificats Apple iOS - Signature Simple</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="auth.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">UnSub</div>
+            <div class="nav-links">
+                <a href="apps.html">Apps disponibles</a>
+                <a href="#comment">Comment ça marche</a>
+                <a href="#prix">Prix</a>
+                <a href="#faq">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div style="display: inline-block; background: #FF453A; color: white; padding: 8px 20px; border-radius: 20px; font-weight: 700; margin-bottom: 20px;">🚀 VERSION BETA</div>
+            <h1>Certificats Apple iOS</h1>
+            <p class="subtitle">Installez vos apps préférées en toute simplicité</p>
+            <p class="description">
+                Obtenez un certificat de signature Apple pour installer des apps 
+                non disponibles sur l'App Store. Simple, rapide, et efficace.
+            </p>
+            <button class="cta-button" onclick="openModal()">
+                Acheter un Certificat - <span class="price-standard">35€</span>
+            </button>
+            <div class="features">
+                <div class="feature">✓ Activation sous 24-48h</div>
+                <div class="feature">✓ Valable 1 an à partir du 5 nov. 2025</div>
+                <div class="feature">✓ Support inclus</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comment" class="section">
+        <div class="container">
+            <h2>Comment ça marche ?</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Achetez votre certificat</h3>
+                    <p>Cliquez sur le bouton et fournissez l'UDID de votre appareil iOS</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Recevez vos fichiers</h3>
+                    <p>Vous recevrez le certificat et le profil de provisionnement par email</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Installez vos apps</h3>
+                    <p>Utilisez le certificat pour signer et installer n'importe quelle app IPA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="prix" class="section section-alt">
+        <div class="container">
+            <h2>Tarifs</h2>
+            
+            <!-- Promotion Launch Banner -->
+            <div class="launch-promo-banner">
+                <div class="promo-icon">🎉</div>
+                <div class="promo-content">
+                    <h3>OFFRE DE LANCEMENT</h3>
+                    <p><strong>Les 10 premières commandes</strong> seront automatiquement <strong style="color: #FFD700;">UPGRADÉES EN PREMIUM</strong> !</p>
+                    <p style="font-size: 14px; margin-top: 8px; opacity: 0.9;">
+                        Commandez Standard ou Instant et recevez le <strong>Certificat Premium (60€)</strong> 🔒 Sans risque de révocation !
+                    </p>
+                    <div class="promo-counter">
+                        <span id="remainingSlots">10</span> places restantes
+                    </div>
+                </div>
+            </div>
+
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                ⚠️ <strong>Important :</strong> Les certificats sont valables jusqu'au 5 novembre 2026. 
+                <strong>Le prix est calculé proportionnellement au temps restant</strong> (il vous reste <span class="remaining-months">12</span> mois). 
+                Plus vous achetez tôt, plus la durée de validité est longue !
+            </p>
+            <p style="text-align: center; color: #FF453A; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; font-weight: 600;">
+                ⛔ <strong>Attention :</strong> Les certificats peuvent être révoqués par Apple à tout moment. Aucun remboursement ne sera effectué en cas de révocation.
+            </p>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="plan-name">Certificat Standard</div>
+                    <div class="price"><span class="price-standard">35€</span></div>
+                    <div class="duration">Valable jusqu'au 5 nov. 2026 (<span class="remaining-months">12</span> mois)</div>
+                    <ul class="features-list">
+                        <li>✓ 1 appareil iOS</li>
+                        <li>✓ Apps illimitées</li>
+                        <li>✓ Activation 24-48h</li>
+                        <li>✓ Support email</li>
+                        <li style="color: #FF453A;">⚠️ Risque de révocation</li>
+                    </ul>
+                    <button class="cta-button" onclick="openModal()">Commander</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="badge">Populaire</div>
+                    <div class="plan-name">Certificat Instant</div>
+                    <div class="price"><span class="price-instant">45€</span></div>
+                    <div class="duration">Valable jusqu'au 5 nov. 2026 (<span class="remaining-months">12</span> mois)</div>
+                    <ul class="features-list">
+                        <li>✓ 1 appareil iOS</li>
+                        <li>✓ Apps illimitées</li>
+                        <li>✓ <strong>Activation immédiate</strong></li>
+                        <li>✓ Support prioritaire + téléphonique</li>
+                        <li style="color: #FF453A;">⚠️ Risque de révocation</li>
+                    </ul>
+                    <button class="cta-button" onclick="openModal('instant')">Commander</button>
+                </div>
+
+                <div class="pricing-card premium">
+                    <div class="badge badge-premium">🔒 Premium</div>
+                    <div class="plan-name">Certificat Premium</div>
+                    <div class="price"><span class="price-premium">60€</span></div>
+                    <div class="duration">Valable jusqu'au 5 nov. 2026 (<span class="remaining-months">12</span> mois)</div>
+                    <ul class="features-list">
+                        <li>✓ 1 appareil iOS</li>
+                        <li>✓ <strong>Toutes les apps premium</strong></li>
+                        <li>✓ Activation immédiate</li>
+                        <li>✓ Support VIP 24/7</li>
+                        <li style="color: #30D158; font-weight: 700;">🔒 AUCUN risque de révocation</li>
+                        <li style="color: #30D158;">✓ Certificat Apple officiel</li>
+                        <li style="color: #30D158;">✓ Garantie de stabilité</li>
+                    </ul>
+                    <button class="cta-button cta-premium" onclick="openModal('premium')">Commander Premium</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section">
+        <div class="container">
+            <h2>Questions fréquentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>Qu'est-ce qu'un UDID ?</h3>
+                    <p>L'UDID (Unique Device Identifier) est un code unique qui identifie votre iPhone ou iPad. 
+                    Vous pouvez le trouver en connectant votre appareil à un ordinateur avec iTunes.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Combien de temps dure le certificat ?</h3>
+                    <p>Les certificats sont valables jusqu'au 5 novembre 2026, quelle que soit la date d'achat. 
+                    Si vous achetez votre certificat le 5 février 2026, il ne sera valable que 9 mois (jusqu'au 5 novembre 2026). 
+                    Plus vous l'achetez tôt, plus vous en profitez longtemps ! Vous recevrez un rappel avant expiration pour le renouveler.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Puis-je changer d'appareil ?</h3>
+                    <p>Le certificat est lié à l'UDID de votre appareil. Si vous changez d'iPhone, 
+                    vous devrez acheter un nouveau certificat.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Quelles apps puis-je installer ?</h3>
+                    <p>Une bibliothèque d'applications est disponible pour installation avec votre certificat iOS.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>C'est quoi une révocation ? Qu'est-ce que je risque ?</h3>
+                    <p>Une révocation, c'est quand Apple <strong>désactive le certificat de développement</strong> qui permet de faire fonctionner vos applications. 
+                    Cela peut arriver si Apple détecte une utilisation non conforme de leur programme développeur.</p>
+                    <p style="margin-top: 15px;"><strong>Les risques si votre certificat est révoqué :</strong></p>
+                    <ul style="margin-top: 10px; padding-left: 20px; color: var(--text-light);">
+                        <li style="margin-bottom: 8px;">📱 <strong>Toutes vos applications modifiées cesseront de fonctionner immédiatement</strong></li>
+                        <li style="margin-bottom: 8px;">❌ Vous ne pourrez plus ouvrir les apps installées avec ce certificat</li>
+                        <li style="margin-bottom: 8px;">💸 <strong style="color: #FF453A;">Aucun remboursement ne sera effectué</strong></li>
+                        <li style="margin-bottom: 8px;">🔄 Vous devrez acheter un nouveau certificat si vous voulez réinstaller les apps</li>
+                    </ul>
+                    <p style="margin-top: 15px; color: #FF9500;"><strong>⚠️ Important :</strong> Les révocations sont <strong>imprévisibles et indépendantes de notre volonté</strong>. 
+                    Nous ne contrôlons pas les décisions d'Apple. En achetant un certificat, vous acceptez ce risque.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Que se passe-t-il en cas de révocation du certificat ?</h3>
+                    <p>Apple peut révoquer les certificats à tout moment sans préavis. En cas de révocation, les applications installées cesseront de fonctionner. 
+                    <strong style="color: #FF453A;">Aucun remboursement ne sera effectué en cas de révocation par Apple.</strong> 
+                    C'est un risque inhérent à l'utilisation de certificats de développement pour des applications modifiées.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Y a-t-il des remboursements ?</h3>
+                    <p><strong style="color: #FF453A;">Non, aucun remboursement n'est possible.</strong> 
+                    Les certificats sont activés immédiatement après paiement et ne peuvent pas être rétractés. 
+                    En achetant un certificat, vous acceptez le risque de révocation par Apple et l'absence de remboursement.</p>
+                </div>
+                <div class="faq-item" style="border: 2px solid #FFD700; background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 193, 7, 0.05));">
+                    <h3>🔒 Qu'est-ce que le Certificat Premium ?</h3>
+                    <p>Le <strong style="color: #FFD700;">Certificat Premium à 60€</strong> utilise un <strong>certificat Apple Developer officiel</strong> au lieu d'un certificat de développement standard.</p>
+                    <p style="margin-top: 15px;"><strong>Avantages du Premium :</strong></p>
+                    <ul style="margin-top: 10px; padding-left: 20px; color: var(--text-light);">
+                        <li style="margin-bottom: 8px;">🔒 <strong style="color: #30D158;">AUCUN risque de révocation</strong> - Certificat Apple officiel</li>
+                        <li style="margin-bottom: 8px;">✅ Toutes les applications premium incluses</li>
+                        <li style="margin-bottom: 8px;">⚡ Activation immédiate</li>
+                        <li style="margin-bottom: 8px;">🛡️ Garantie de stabilité maximale</li>
+                        <li style="margin-bottom: 8px;">👑 Support VIP 24/7 avec assistance personnalisée</li>
+                        <li style="margin-bottom: 8px;">🔄 Mises à jour prioritaires</li>
+                    </ul>
+                    <p style="margin-top: 15px; color: #30D158;"><strong>💡 Recommandé pour :</strong> 
+                    Les utilisateurs qui veulent une solution 100% fiable sans se soucier des révocations. 
+                    Le Premium utilise la méthode la plus sécurisée et stable disponible.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Quelle est la différence entre Standard, Instant et Premium ?</h3>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; margin-top: 15px; border-collapse: collapse;">
+                            <tr style="background: rgba(255,255,255,0.05);">
+                                <th style="padding: 12px; text-align: left; border-bottom: 2px solid var(--border-color);">Critère</th>
+                                <th style="padding: 12px; text-align: center; border-bottom: 2px solid var(--border-color);">Standard</th>
+                                <th style="padding: 12px; text-align: center; border-bottom: 2px solid var(--border-color);">Instant</th>
+                                <th style="padding: 12px; text-align: center; border-bottom: 2px solid #FFD700; color: #FFD700;">Premium</th>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Prix</td>
+                                <td style="padding: 12px; text-align: center; border-bottom: 1px solid var(--border-color);">35€ → 10€</td>
+                                <td style="padding: 12px; text-align: center; border-bottom: 1px solid var(--border-color);">45€ → 10€</td>
+                                <td style="padding: 12px; text-align: center; border-bottom: 1px solid var(--border-color); color: #FFD700;">60€ fixe</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Activation</td>
+                                <td style="padding: 12px; text-align: center; border-bottom: 1px solid var(--border-color);">24-48h</td>
+                                <td style="padding: 12px; text-align: center; border-bottom: 1px solid var(--border-color);">Immédiate</td>
+                                <td style="padding: 12px; text-align: center; border-bottom: 1px solid var(--border-color); color: #30D158;">Immédiate</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Révocation</td>
+                                <td style="padding: 12px; text-align: center; border-bottom: 1px solid var(--border-color); color: #FF453A;">Risque ⚠️</td>
+                                <td style="padding: 12px; text-align: center; border-bottom: 1px solid var(--border-color); color: #FF453A;">Risque ⚠️</td>
+                                <td style="padding: 12px; text-align: center; border-bottom: 1px solid var(--border-color); color: #30D158;">Aucun risque 🔒</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px; border-bottom: 1px solid var(--border-color);">Support</td>
+                                <td style="padding: 12px; text-align: center; border-bottom: 1px solid var(--border-color);">Email</td>
+                                <td style="padding: 12px; text-align: center; border-bottom: 1px solid var(--border-color);">Prioritaire</td>
+                                <td style="padding: 12px; text-align: center; border-bottom: 1px solid var(--border-color); color: #FFD700;">VIP 24/7 👑</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for UDID input -->
+    <div id="purchaseModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Acheter un Certificat</h2>
+            <form id="purchaseForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="email">Votre email</label>
+                    <input type="email" id="email" name="email" required 
+                           placeholder="votre@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="udid">UDID de votre appareil</label>
+                    <input type="text" id="udid" name="udid" required 
+                           placeholder="00008030-001234567890123A"
+                           pattern="[0-9a-fA-F-]{25,40}">
+                    <small>Format: 00008030-001234567890123A</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="deviceName">Nom de l'appareil (optionnel)</label>
+                    <input type="text" id="deviceName" name="deviceName" 
+                           placeholder="iPhone de Jean">
+                </div>
+
+                <input type="hidden" id="planType" name="planType" value="standard">
+
+                <div style="background: rgba(255, 69, 58, 0.1); border: 1px solid #FF453A; border-radius: 8px; padding: 15px; margin-bottom: 20px;">
+                    <p style="color: #FF453A; font-size: 14px; margin: 0; line-height: 1.6;">
+                        <strong>⚠️ Avertissement :</strong> Les certificats peuvent être révoqués par Apple à tout moment. 
+                        Aucun remboursement ne sera effectué en cas de révocation ou pour toute autre raison.
+                    </p>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        J'accepte les <a href="#" target="_blank">conditions d'utilisation</a> et je comprends qu'aucun remboursement ne sera effectué
+                    </label>
+                </div>
+
+                <button type="submit" class="cta-button">
+                    Payer <span class="price-standard">35€</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 iOS Certifs. Ce service est indépendant et non affilié à Apple Inc.</p>
+            <div class="footer-links">
+                <a href="#">Contact</a>
+                <a href="#">Mentions légales</a>
+                <a href="#">CGV</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

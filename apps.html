@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications Disponibles - iOS Certifs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="apps.css">
+    <link rel="stylesheet" href="ota-install.css">
+    <script src="auth.js"></script>
+    <script src="ota-install.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">📱 iOS Certifs</div>
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="apps.html" class="active">Apps disponibles</a>
+                <a href="index.html#prix">Prix</a>
+                <a href="index.html#faq">FAQ</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="apps-hero">
+        <div class="container">
+            <h1>Applications Disponibles</h1>
+            <p class="subtitle">Installez vos apps préférées modifiées avec votre certificat iOS</p>
+            <div style="display: inline-block; background: #FF453A; color: white; padding: 8px 20px; border-radius: 20px; font-weight: 700; margin-top: 20px;">🚀 VERSION BETA</div>
+        </div>
+    </section>
+
+    <section class="apps-section">
+        <div class="container">
+            <div class="apps-grid">
+                <!-- Spotify -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <img src="icons/spotify.png" alt="Spotify" class="app-logo">
+                    </div>
+                    <div class="app-info">
+                        <h3>Spotify++</h3>
+                        <p class="app-description">Écoute illimitée sans publicité, téléchargements offline, qualité audio maximale</p>
+                        <div class="app-features">
+                            <span class="feature-tag">✓ Sans pubs</span>
+                            <span class="feature-tag">✓ Offline</span>
+                            <span class="feature-tag">✓ Qualité max</span>
+                        </div>
+                        <span class="app-version">v8.8.96</span>
+                        <div class="app-actions">
+                            <button class="install-btn" onclick="installApp('spotify', 'Spotify++')" data-app-id="spotify" data-app-name="Spotify++">
+                                📲 Installer
+                            </button>
+                            <button class="download-btn" onclick="downloadIPA('spotify', 'Spotify++')">
+                                📥 Télécharger IPA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deezer -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <img src="icons/deezer.png" alt="Deezer" class="app-logo">
+                    </div>
+                    <div class="app-info">
+                        <h3>Deezer++</h3>
+                        <p class="app-description">Streaming sans limites, qualité FLAC, lyrics en temps réel, téléchargements illimités</p>
+                        <div class="app-features">
+                            <span class="feature-tag">✓ FLAC</span>
+                            <span class="feature-tag">✓ Sans pubs</span>
+                            <span class="feature-tag">✓ Offline</span>
+                        </div>
+                        <span class="app-version">v9.7.0</span>
+                        <div class="app-actions">
+                            <button class="install-btn" onclick="installApp('deezer', 'Deezer++')" data-app-id="deezer" data-app-name="Deezer++">
+                                📲 Installer
+                            </button>
+                            <button class="download-btn" onclick="downloadIPA('deezer', 'Deezer++')">
+                                📥 Télécharger IPA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YouTube -->
+                <div class="app-card featured">
+                    <div class="popular-badge">Populaire</div>
+                    <div class="app-icon">
+                        <img src="icons/youtube.png" alt="YouTube" class="app-logo">
+                    </div>
+                    <div class="app-info">
+                        <h3>YouTube++</h3>
+                        <p class="app-description">Vidéos sans publicité, lecture en arrière-plan, téléchargements, PiP amélioré</p>
+                        <div class="app-features">
+                            <span class="feature-tag">✓ Sans pubs</span>
+                            <span class="feature-tag">✓ Background</span>
+                            <span class="feature-tag">✓ PiP</span>
+                            <span class="feature-tag">✓ Download</span>
+                        </div>
+                        <span class="app-version">v19.45.2</span>
+                        <div class="app-actions">
+                            <button class="install-btn" onclick="installApp('youtube', 'YouTube++')" data-app-id="youtube" data-app-name="YouTube++">
+                                📲 Installer
+                            </button>
+                            <button class="download-btn" onclick="downloadIPA('youtube', 'YouTube++')">
+                                📥 Télécharger IPA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YouTube Music -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <img src="icons/youtube_music.png" alt="YouTube Music" class="app-logo">
+                    </div>
+                    <div class="app-info">
+                        <h3>YouTube Music++</h3>
+                        <p class="app-description">Musique sans pubs, lecture en arrière-plan, qualité audio supérieure</p>
+                        <div class="app-features">
+                            <span class="feature-tag">✓ Sans pubs</span>
+                            <span class="feature-tag">✓ Background</span>
+                            <span class="feature-tag">✓ HD Audio</span>
+                        </div>
+                        <span class="app-version">v7.02.2</span>
+                        <div class="app-actions">
+                            <button class="install-btn" onclick="installApp('youtubemusic', 'YouTube Music++')" data-app-id="youtubemusic" data-app-name="YouTube Music++">
+                                📲 Installer
+                            </button>
+                            <button class="download-btn" onclick="downloadIPA('youtubemusic', 'YouTube Music++')">
+                                📥 Télécharger IPA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TikTok -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <img src="icons/tiktok.png" alt="TikTok" class="app-logo">
+                    </div>
+                    <div class="app-info">
+                        <h3>TikTok++</h3>
+                        <p class="app-description">Téléchargement de vidéos sans watermark, pas de pubs, fonctionnalités premium</p>
+                        <div class="app-features">
+                            <span class="feature-tag">✓ Download</span>
+                            <span class="feature-tag">✓ Sans watermark</span>
+                            <span class="feature-tag">✓ Sans pubs</span>
+                        </div>
+                        <span class="app-version">v34.0.0</span>
+                        <div class="app-actions">
+                            <button class="install-btn" onclick="installApp('tiktok', 'TikTok++')" data-app-id="tiktok" data-app-name="TikTok++">
+                                📲 Installer
+                            </button>
+                            <button class="download-btn" onclick="downloadIPA('tiktok', 'TikTok++')">
+                                📥 Télécharger IPA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instagram -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <img src="icons/instagram.jfif" alt="Instagram" class="app-logo">
+                    </div>
+                    <div class="app-info">
+                        <h3>Instagram++</h3>
+                        <p class="app-description">Téléchargement stories/photos, zoom photos de profil, pas de pubs</p>
+                        <div class="app-features">
+                            <span class="feature-tag">✓ Download</span>
+                            <span class="feature-tag">✓ Zoom profil</span>
+                            <span class="feature-tag">✓ Sans pubs</span>
+                        </div>
+                        <span class="app-version">v309.0</span>
+                        <div class="app-actions">
+                            <button class="install-btn" onclick="installApp('instagram', 'Instagram++')" data-app-id="instagram" data-app-name="Instagram++">
+                                📲 Installer
+                            </button>
+                            <button class="download-btn" onclick="downloadIPA('instagram', 'Instagram++')">
+                                📥 Télécharger IPA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CapCut Pro -->
+                <div class="app-card">
+                    <div class="app-icon" style="background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);">
+                        <span class="icon-text">✂️</span>
+                    </div>
+                    <div class="app-info">
+                        <h3>CapCut Pro</h3>
+                        <p class="app-description">Montage vidéo professionnel, tous les effets premium débloqués, export sans watermark</p>
+                        <div class="app-features">
+                            <span class="feature-tag">✓ Effets premium</span>
+                            <span class="feature-tag">✓ Sans watermark</span>
+                            <span class="feature-tag">✓ Export 4K</span>
+                        </div>
+                        <span class="app-version">v10.5.0</span>
+                        <div class="app-actions">
+                            <button class="install-btn" onclick="installApp('capcut', 'CapCut Pro')" data-app-id="capcut" data-app-name="CapCut Pro">
+                                📲 Installer
+                            </button>
+                            <button class="download-btn" onclick="downloadIPA('capcut', 'CapCut Pro')">
+                                📥 Télécharger IPA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dazz Cam Pro -->
+                <div class="app-card">
+                    <div class="app-icon" style="background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);">
+                        <span class="icon-text">📸</span>
+                    </div>
+                    <div class="app-info">
+                        <h3>Dazz Cam Pro</h3>
+                        <p class="app-description">Appareil photo vintage, filtres rétro professionnels, tous les effets débloqués</p>
+                        <div class="app-features">
+                            <span class="feature-tag">✓ Tous filtres</span>
+                            <span class="feature-tag">✓ Sans pubs</span>
+                            <span class="feature-tag">✓ Export HD</span>
+                        </div>
+                        <span class="app-version">v3.8.2</span>
+                        <div class="app-actions">
+                            <button class="install-btn" onclick="installApp('dazzcam', 'Dazz Cam Pro')" data-app-id="dazzcam" data-app-name="Dazz Cam Pro">
+                                📲 Installer
+                            </button>
+                            <button class="download-btn" onclick="downloadIPA('dazzcam', 'Dazz Cam Pro')">
+                                📥 Télécharger IPA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delta Emulator -->
+                <div class="app-card">
+                    <div class="app-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <span class="icon-text">🎮</span>
+                    </div>
+                    <div class="app-info">
+                        <h3>Delta Emulator</h3>
+                        <p class="app-description">Émulateur multi-consoles (NES, SNES, N64, GBA, DS), communauté gaming énorme, sauvegarde cloud</p>
+                        <div class="app-features">
+                            <span class="feature-tag">✓ Multi-consoles</span>
+                            <span class="feature-tag">✓ Sauvegarde cloud</span>
+                            <span class="feature-tag">✓ Manette support</span>
+                            <span class="feature-tag">✓ Communauté</span>
+                        </div>
+                        <span class="app-version">v1.6.2</span>
+                        <div class="app-actions">
+                            <button class="install-btn" onclick="installApp('delta', 'Delta Emulator')" data-app-id="delta" data-app-name="Delta Emulator">
+                                📲 Installer
+                            </button>
+                            <button class="download-btn" onclick="downloadIPA('delta', 'Delta Emulator')">
+                                📥 Télécharger IPA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BeReal++ -->
+                <div class="app-card">
+                    <div class="app-icon" style="background: linear-gradient(135deg, #000000 0%, #2d2d2d 100%);">
+                        <span class="icon-text">👥</span>
+                    </div>
+                    <div class="app-info">
+                        <h3>BeReal++</h3>
+                        <p class="app-description">BeReal amélioré, post à n'importe quelle heure, retakes illimités, voir qui regarde votre profil</p>
+                        <div class="app-features">
+                            <span class="feature-tag">✓ Post flexible</span>
+                            <span class="feature-tag">✓ Retakes illimités</span>
+                            <span class="feature-tag">✓ Voir visiteurs</span>
+                        </div>
+                        <span class="app-version">v1.18.0</span>
+                        <div class="app-actions">
+                            <button class="install-btn" onclick="installApp('bereal', 'BeReal++')" data-app-id="bereal" data-app-name="BeReal++">
+                                📲 Installer
+                            </button>
+                            <button class="download-btn" onclick="downloadIPA('bereal', 'BeReal++')">
+                                📥 Télécharger IPA
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <div class="info-card">
+                    <h2>📦 Comment installer ces applications ?</h2>
+                    <ol class="install-steps">
+                        <li><strong>Achetez votre certificat</strong> - Commandez un certificat iOS sur notre page d'accueil</li>
+                        <li><strong>Recevez vos fichiers</strong> - Vous recevrez le certificat et les instructions par email</li>
+                        <li><strong>Installez les apps</strong> - Utilisez votre certificat pour signer et installer les fichiers IPA</li>
+                        <li><strong>Profitez !</strong> - Toutes les fonctionnalités premium débloquées</li>
+                    </ol>
+                    <button class="cta-button" onclick="window.location.href='index.html#prix'">
+                        Obtenir mon certificat - <span class="price-standard">35€</span>
+                    </button>
+                </div>
+
+                <div class="info-card warning-card">
+                    <h2>⚠️ Informations importantes</h2>
+                    <ul class="warning-list">
+                        <li>Ces applications sont des versions modifiées, non officielles</li>
+                        <li>Elles ne proviennent pas de l'App Store officiel</li>
+                        <li>Un certificat iOS valide est requis pour l'installation</li>
+                        <li>Les versions peuvent être mises à jour régulièrement</li>
+                        <li>Nous ne sommes pas affiliés aux éditeurs originaux</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 iOS Certifs. Ce service est indépendant et non affilié à Apple Inc.</p>
+            <div class="footer-links">
+                <a href="#">Contact</a>
+                <a href="#">Mentions légales</a>
+                <a href="#">CGV</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

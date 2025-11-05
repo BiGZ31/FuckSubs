@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Certifs - Accès Privé</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="intro.css">
+</head>
+<body>
+    <!-- Intro Animation -->
+    <div id="introScreen" class="intro-screen active">
+        <div class="intro-content">
+            <!-- Slide 1 : Le problème -->
+            <div class="slide" id="slide1">
+                <h1 class="slide-title">Marre de payer des abonnements ?</h1>
+                <div class="apps-grid-intro">
+                    <div class="app-price-item">
+                        <span class="app-icon-small">🎵</span>
+                        <span class="app-name">Spotify</span>
+                        <span class="app-price-small">10,99€/mois</span>
+                    </div>
+                    <div class="app-price-item">
+                        <span class="app-icon-small">▶️</span>
+                        <span class="app-name">YouTube</span>
+                        <span class="app-price-small">12,99€/mois</span>
+                    </div>
+                    <div class="app-price-item">
+                        <span class="app-icon-small">🎶</span>
+                        <span class="app-name">Deezer</span>
+                        <span class="app-price-small">10,99€/mois</span>
+                    </div>
+                    <div class="app-price-item">
+                        <span class="app-icon-small">🎬</span>
+                        <span class="app-name">TikTok</span>
+                        <span class="app-price-small">Pubs infinies</span>
+                    </div>
+                </div>
+                <div class="total-year-compact">
+                    <span class="total-label">Total par an :</span>
+                    <span class="total-value">419€</span>
+                </div>
+            </div>
+
+            <!-- Slide 2 : La solution -->
+            <div class="slide" id="slide2">
+                <h1 class="slide-title">💡 Tout débloquer pour</h1>
+                <div class="solution-price-huge">35€</div>
+                <p class="slide-text-large">Un seul paiement • 10+ apps • 1 an complet</p>
+                <div class="economy-badge">
+                    Économisez <strong>384€</strong> par rapport aux abonnements
+                </div>
+                <div style="margin-top: 25px; padding: 15px; background: rgba(255, 215, 0, 0.1); border: 2px solid #FFD700; border-radius: 12px;">
+                    <p style="margin: 0; font-size: 16px; color: #FFD700;">
+                        <strong>🔒 Certificat Premium 60€</strong> • Sans risque de révocation
+                    </p>
+                </div>
+            </div>
+
+            <!-- Slide 3 : Ce que vous obtenez -->
+            <div class="slide" id="slide3">
+                <h2 class="slide-subtitle-large">Ce que vous obtenez</h2>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <div class="feature-icon">📱</div>
+                        <div class="feature-title">10+ Apps Premium</div>
+                        <div class="feature-desc">Spotify, YouTube, Deezer, TikTok, Instagram, CapCut...</div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">💰</div>
+                        <div class="feature-title">Un seul paiement</div>
+                        <div class="feature-desc">Aucun abonnement récurrent, aucun renouvellement automatique</div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">🔒</div>
+                        <div class="feature-title">Site Privé</div>
+                        <div class="feature-desc">Accès exclusif à une communauté privée</div>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon">🛠️</div>
+                        <div class="feature-title">Support Inclus</div>
+                        <div class="feature-desc">Assistance technique par email</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 : CTA Final -->
+            <div class="slide" id="slide4">
+                <h1 class="slide-title-final">Prêt à économiser 384€ ?</h1>
+                <p class="slide-text-large">Rejoignez des centaines d'utilisateurs satisfaits</p>
+                <button class="cta-button-intro" onclick="showLogin()">
+                    Accéder au site 🚀
+                </button>
+                <button class="skip-btn-intro" onclick="showLogin()">
+                    Passer l'intro ⏭️
+                </button>
+            </div>
+        </div>
+
+        <!-- Progress indicator -->
+        <div class="progress-dots">
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+            <span class="dot" data-slide="4"></span>
+        </div>
+    </div>
+
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-container">
+            <div class="login-header">
+                <div class="logo-large">📱 iOS Certifs</div>
+                <div class="beta-badge-login">BETA - Site Privé</div>
+                <p class="login-subtitle">Accès réservé aux membres</p>
+            </div>
+
+            <form id="loginForm" class="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group-login">
+                    <label for="username">
+                        <span class="label-icon">👤</span>
+                        Identifiant
+                    </label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        required 
+                        placeholder="Votre identifiant"
+                        autocomplete="username"
+                    >
+                </div>
+
+                <div class="form-group-login">
+                    <label for="password">
+                        <span class="label-icon">🔒</span>
+                        Mot de passe
+                    </label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        required 
+                        placeholder="Votre mot de passe"
+                        autocomplete="current-password"
+                    >
+                </div>
+
+                <div class="error-message" id="errorMessage"></div>
+
+                <button type="submit" class="login-btn">
+                    <span id="loginBtnText">Se connecter</span>
+                </button>
+
+                <div class="login-footer">
+                    <p>Pas encore de compte ?</p>
+                    <a href="#" onclick="showRegisterInfo(event)" class="register-link">Demander l'accès</a>
+                </div>
+
+                <div class="demo-credentials">
+                    <p style="opacity: 0.7; font-size: 13px; margin-top: 20px;">
+                        <strong>Mode démo :</strong> Utilisez n'importe quel identifiant/mot de passe
+                    </p>
+                </div>
+            </form>
+        </div>
+
+        <div class="login-decoration">
+            <div class="decoration-circle circle-1"></div>
+            <div class="decoration-circle circle-2"></div>
+            <div class="decoration-circle circle-3"></div>
+        </div>
+    </div>
+
+    <script src="intro.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Intro Animation</title>
+    <link rel="stylesheet" href="intro.css">
+    <style>
+        .debug {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 12px;
+            z-index: 99999;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug" id="debug">
+        <strong>Debug Info:</strong><br>
+        Intro visible: <span id="introVisible">-</span><br>
+        Login visible: <span id="loginVisible">-</span><br>
+        IsLoggedIn: <span id="isLoggedIn">-</span><br>
+        <button onclick="clearStorage()" style="margin-top: 10px; padding: 5px 10px; cursor: pointer;">Clear Storage</button>
+    </div>
+
+    <!-- Intro Animation -->
+    <div id="introScreen" class="intro-screen">
+        <div class="intro-content">
+            <div class="intro-text-container">
+                <h1 class="intro-title fade-in-1">Test Animation</h1>
+                <p class="intro-subtitle fade-in-2">Texte qui doit apparaître avec animation...</p>
+                <p class="intro-subtitle fade-in-3">Encore du texte animé...</p>
+                
+                <button class="continue-btn fade-in-9" onclick="showLogin()">
+                    Continuer 🚀
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-container">
+            <h2>Écran de connexion</h2>
+            <p>Si vous voyez ceci, la transition a fonctionné !</p>
+            <button onclick="backToIntro()" style="padding: 10px 20px; cursor: pointer;">Retour à l'intro</button>
+        </div>
+    </div>
+
+    <script>
+        function showLogin() {
+            const introScreen = document.getElementById('introScreen');
+            const loginScreen = document.getElementById('loginScreen');
+            
+            introScreen.classList.remove('active');
+            setTimeout(() => {
+                loginScreen.classList.add('active');
+                updateDebug();
+            }, 500);
+        }
+
+        function backToIntro() {
+            const introScreen = document.getElementById('introScreen');
+            const loginScreen = document.getElementById('loginScreen');
+            
+            loginScreen.classList.remove('active');
+            setTimeout(() => {
+                introScreen.classList.add('active');
+                updateDebug();
+            }, 500);
+        }
+
+        function clearStorage() {
+            localStorage.clear();
+            alert('LocalStorage effacé !');
+            updateDebug();
+        }
+
+        function updateDebug() {
+            const introScreen = document.getElementById('introScreen');
+            const loginScreen = document.getElementById('loginScreen');
+            
+            document.getElementById('introVisible').textContent = 
+                introScreen.classList.contains('active') ? 'OUI' : 'NON';
+            document.getElementById('loginVisible').textContent = 
+                loginScreen.classList.contains('active') ? 'OUI' : 'NON';
+            document.getElementById('isLoggedIn').textContent = 
+                localStorage.getItem('isLoggedIn') || 'null';
+        }
+
+        // Show intro on load
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM Loaded - Starting intro...');
+            setTimeout(() => {
+                document.getElementById('introScreen').classList.add('active');
+                updateDebug();
+                console.log('Intro should be visible now');
+            }, 100);
+        });
+
+        // Update debug every second
+        setInterval(updateDebug, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord - iOS Certifs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="auth.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">📱 iOS Certifs</div>
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="apps.html">Apps disponibles</a>
+                <a href="#" class="active">Mon compte</a>
+                <a href="#" onclick="logout()">Déconnexion</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="container">
+            <div class="welcome-section">
+                <h1>Bienvenue sur votre tableau de bord</h1>
+                <p class="success-message">✅ Votre commande a été reçue avec succès !</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Order Status -->
+                <div class="dashboard-card status-card">
+                    <h2>📋 Statut de votre commande</h2>
+                    <div class="status-info">
+                        <div class="status-badge processing">
+                            <span class="pulse"></span>
+                            En cours de traitement
+                        </div>
+                        <p class="status-text">
+                            Votre UDID est en cours d'enregistrement sur notre compte développeur Apple. 
+                            Vous recevrez vos fichiers de certificat dans les <strong>24-48 heures</strong>.
+                        </p>
+                        <div class="timeline">
+                            <div class="timeline-item completed">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <strong>Commande reçue</strong>
+                                    <span id="orderDate"></span>
+                                </div>
+                            </div>
+                            <div class="timeline-item active">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <strong>Enregistrement UDID</strong>
+                                    <span>En cours...</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <strong>Certificat prêt</strong>
+                                    <span>Sous 24-48h</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Device Info -->
+                <div class="dashboard-card">
+                    <h2>📱 Informations de l'appareil</h2>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <span class="label">Email:</span>
+                            <span class="value" id="userEmail"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">UDID:</span>
+                            <span class="value mono" id="userUDID"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Nom de l'appareil:</span>
+                            <span class="value" id="deviceName"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Type de certificat:</span>
+                            <span class="value" id="planType"></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Validité:</span>
+                            <span class="value">1 an à partir de l'activation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Steps -->
+                <div class="dashboard-card full-width">
+                    <h2>📖 Prochaines étapes</h2>
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="step-icon">📧</div>
+                            <h3>1. Vérifiez vos emails</h3>
+                            <p>Vous recevrez un email de confirmation immédiatement, puis un second email avec vos fichiers de certificat dans 24-48h.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-icon">📥</div>
+                            <h3>2. Téléchargez vos fichiers</h3>
+                            <p>Une fois prêt, vous recevrez:
+                                <ul>
+                                    <li>Le certificat (.p12)</li>
+                                    <li>Le profil de provisionnement (.mobileprovision)</li>
+                                    <li>Les instructions d'installation</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-icon">🛠️</div>
+                            <h3>3. Installez sur votre appareil</h3>
+                            <p>Utilisez une app de signature comme <strong>Sideloadly</strong> ou <strong>AltStore</strong> pour installer vos apps IPA préférées.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resources -->
+                <div class="dashboard-card full-width resources-card">
+                    <h2>🎓 Ressources et tutoriels</h2>
+                    <div class="resources-grid">
+                        <a href="#" class="resource-link">
+                            <span class="resource-icon">📄</span>
+                            <div>
+                                <strong>Guide d'installation</strong>
+                                <p>Comment installer votre certificat</p>
+                            </div>
+                        </a>
+                        <a href="#" class="resource-link">
+                            <span class="resource-icon">🎥</span>
+                            <div>
+                                <strong>Tutoriel vidéo</strong>
+                                <p>Installation pas à pas en vidéo</p>
+                            </div>
+                        </a>
+                        <a href="#" class="resource-link">
+                            <span class="resource-icon">🔧</span>
+                            <div>
+                                <strong>Outils recommandés</strong>
+                                <p>Sideloadly, AltStore, et plus</p>
+                            </div>
+                        </a>
+                        <a href="#" class="resource-link">
+                            <span class="resource-icon">💬</span>
+                            <div>
+                                <strong>Support client</strong>
+                                <p>Besoin d'aide ? Contactez-nous</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Downloads (will be enabled once certificate is ready) -->
+                <div class="dashboard-card full-width downloads-card">
+                    <h2>⬇️ Téléchargements</h2>
+                    <p class="info-message">
+                        Vos fichiers de certificat seront disponibles ici une fois le traitement terminé.
+                    </p>
+                    <div class="download-buttons disabled">
+                        <button class="download-btn" disabled>
+                            <span>📄</span>
+                            Certificat .p12
+                            <small>Disponible bientôt</small>
+                        </button>
+                        <button class="download-btn" disabled>
+                            <span>📋</span>
+                            Profil .mobileprovision
+                            <small>Disponible bientôt</small>
+                        </button>
+                        <button class="download-btn" disabled>
+                            <span>📖</span>
+                            Guide PDF
+                            <small>Disponible bientôt</small>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 iOS Certifs. Ce service est indépendant et non affilié à Apple Inc.</p>
+            <div class="footer-links">
+                <a href="#">Contact</a>
+                <a href="#">Mentions légales</a>
+                <a href="#">CGV</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

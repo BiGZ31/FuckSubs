@@ -1,0 +1,381 @@
+/* OTA Installation Styles */
+
+/* Install Buttons */
+.install-btn {
+    background: linear-gradient(135deg, #30D158 0%, #28A745 100%);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(48, 209, 88, 0.3);
+    width: 100%;
+}
+
+.install-btn:hover {
+    background: linear-gradient(135deg, #28A745 0%, #218838 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(48, 209, 88, 0.4);
+}
+
+.install-btn:active {
+    transform: translateY(0);
+}
+
+.install-btn:disabled {
+    background: linear-gradient(135deg, #666 0%, #555 100%);
+    cursor: not-allowed;
+    opacity: 0.6;
+    box-shadow: none;
+}
+
+/* Download Button */
+.download-btn {
+    background: linear-gradient(135deg, #0A84FF 0%, #0066CC 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+    transform: translateY(-2px);
+}
+
+/* Button Actions Container */
+.app-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Spinner for loading */
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Notification System */
+.ota-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.95);
+    color: white;
+    padding: 16px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 300px;
+    max-width: 500px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+    animation: slideInRight 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.ota-notification.fade-out {
+    animation: slideOutRight 0.3s ease;
+}
+
+@keyframes slideOutRight {
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.ota-notification.success {
+    border-left: 4px solid #30D158;
+}
+
+.ota-notification.error {
+    border-left: 4px solid #FF453A;
+}
+
+.ota-notification.warning {
+    border-left: 4px solid #FF9F0A;
+}
+
+.ota-notification.info {
+    border-left: 4px solid #0A84FF;
+}
+
+.notif-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.notif-message {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.notif-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.notif-close:hover {
+    opacity: 1;
+}
+
+/* Authorization Warning Banner */
+.auth-warning {
+    background: linear-gradient(135deg, rgba(255, 69, 58, 0.15), rgba(255, 149, 0, 0.15));
+    border: 2px solid rgba(255, 69, 58, 0.5);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 40px;
+    animation: slideInDown 0.5s ease;
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.warning-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.warning-icon {
+    font-size: 48px;
+    flex-shrink: 0;
+}
+
+.warning-text {
+    flex: 1;
+}
+
+.warning-text strong {
+    font-size: 20px;
+    color: var(--text-color);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.warning-text p {
+    color: var(--text-light);
+    margin: 0;
+    font-size: 15px;
+}
+
+.warning-btn {
+    background: linear-gradient(135deg, #FF453A 0%, #D32F2F 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.warning-btn:hover {
+    background: linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 69, 58, 0.4);
+}
+
+/* App Version Badge */
+.app-version {
+    display: inline-block;
+    background: rgba(10, 132, 255, 0.15);
+    color: var(--primary-color);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* Installation Status */
+.install-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 10px;
+    background: rgba(10, 132, 255, 0.1);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+.install-status.success {
+    background: rgba(48, 209, 88, 0.1);
+    color: #30D158;
+}
+
+.status-icon {
+    font-size: 16px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .ota-notification {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        min-width: unset;
+        max-width: unset;
+    }
+    
+    .warning-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .warning-icon {
+        font-size: 36px;
+    }
+    
+    .warning-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Device Detection Info */
+.device-info {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.device-info-icon {
+    font-size: 32px;
+}
+
+.device-info-text {
+    flex: 1;
+}
+
+.device-info-text strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--text-color);
+}
+
+.device-info-text span {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+/* How to Install Guide */
+.install-guide {
+    background: linear-gradient(135deg, rgba(10, 132, 255, 0.1), rgba(94, 92, 230, 0.1));
+    border: 1px solid rgba(10, 132, 255, 0.3);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 30px 0;
+}
+
+.install-guide h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 20px;
+}
+
+.install-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.install-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.step-number-small {
+    background: var(--primary-color);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 12px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.step-text {
+    flex: 1;
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.5;
+}
