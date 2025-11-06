@@ -130,7 +130,8 @@ async function handleSubmit(event) {
         email: formData.get('email'),
         udid: formData.get('udid'),
         deviceName: formData.get('deviceName'),
-        planType: formData.get('planType')
+        planType: formData.get('planType'),
+        username: localStorage.getItem('username') || null // Include username if logged in
     };
 
     // Get submit button
@@ -141,7 +142,7 @@ async function handleSubmit(event) {
 
     try {
         // Send order to backend
-        const response = await fetch('/api/orders', {
+        const response = await fetch('http://localhost:3000/api/orders', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

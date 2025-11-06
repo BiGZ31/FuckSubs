@@ -126,6 +126,9 @@ async function handleLogin(event) {
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('username', result.username);
             localStorage.setItem('token', result.token);
+            localStorage.setItem('userRole', result.role || 'user');
+            localStorage.setItem('userStatus', result.status || 'free');
+            localStorage.setItem('userBadge', result.badge || '🆓');
             localStorage.setItem('loginTime', new Date().toISOString());
             
             // Redirect to main site

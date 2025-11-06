@@ -1,0 +1,15 @@
+📱 GUIDE D'INSTALLATION - CERTIFICAT iOS
+
+Ce fichier sera remplacé par un vrai PDF d'instructions.
+
+En attendant, voici les étapes principales:
+
+1. Téléchargez tous les fichiers (certificat .p12 et profil .mobileprovision)
+2. Connectez votre iPhone à votre ordinateur via USB
+3. Ouvrez iTunes ou Finder (sur macOS Catalina+)
+4. Glissez-déposez le fichier .mobileprovision sur votre appareil
+5. Sur votre iPhone, allez dans Réglages > Général > VPN et gestion des appareils
+6. Faites confiance au profil de développeur
+7. Installez vos applications signées avec ce certificat
+
+Pour toute question, contactez: fucksubs@proton.me
